@@ -101,17 +101,17 @@ jobs:
   Cluster_1:
 
     needs: Version
-    name: "Cluster 1/6"
+    name: "Cluster 2/10"
     if: ${{ success() && github.repository_owner == 'armbian-beta' }}
     uses: armbian/scripts/.github/workflows/build-images.yml@main
 
     with:
 
-      config: "${{ github.event.inputs.config || 'default.conf' }}"
+      config: "${{ github.event.inputs.config || 'all.conf' }}"
       release: "${{ github.event.inputs.release || 'nightly' }}"
       board: '${{ github.event.inputs.board }}'
-      part: 1
-      of: 6
+      part: 2
+      of: 10
       version: "${{ needs.Version.outputs.version }}"
       parallel: 20
 
