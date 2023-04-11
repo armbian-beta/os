@@ -96,6 +96,12 @@ jobs:
           path: tag
           retention-days: 5
 
+      - uses: dev-drprasad/delete-tag-and-release@v0.2.1
+        with:
+          tag_name: ${{ env.version }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          delete_release: true
+          
       - uses: ncipollo/release-action@v1
         with:
           tag: ${{ env.version }}
