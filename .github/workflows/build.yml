@@ -36,7 +36,7 @@ jobs:
   Build:
 
     needs: Prepare
-    name: "Cluster 2/8"
+    name: "Cluster 2/10"
     if: ${{ github.repository_owner == 'armbian-beta' }}
     uses: armbian/scripts/.github/workflows/build-images.yml@main
 
@@ -46,7 +46,7 @@ jobs:
       release: "${{ github.event.client_payload.release || 'nightly' }}"
       board: '${{ github.event.client_payload.board }}'
       part: 2
-      of: 8
+      of: 10
       version: "${{ github.event.client_payload.version }}"
       parallel: 13
 
