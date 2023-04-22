@@ -36,7 +36,7 @@ jobs:
   Build:
 
     needs: Prepare
-    name: "Cluster 2/10"
+    name: "Cluster 2/6"
     if: ${{ github.repository_owner == 'armbian-beta' }}
     uses: armbian/scripts/.github/workflows/build-images.yml@main
 
